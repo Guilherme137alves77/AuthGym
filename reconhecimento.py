@@ -9,7 +9,7 @@ FaceDetector = mp.tasks.vision.FaceDetector
 FaceDetectorOptions = mp.tasks.vision.FaceDetectorOptions
 
 # Criando o detector (usa o modelo padrão  embutido na biblioteca)
-options = FaceDetectorOptions(base_options=BaseOptions())
+options = FaceDetectorOptions(  base_options=BaseOptions(model_asset_path='detector.tflite'))
 # Inicializa o detector de rostos oficial com base nas opçoes que configura acima 
 detector = FaceDetector.create_from_options(options)
 
@@ -62,6 +62,7 @@ while webcam.isOpened():
     # Aguarda 5 milissegundos pela pressão de uma tecla. Se a tecla pressionada for 'ESC' (código 27), fecha o programa
     if cv2.waitKey(5) == 27:
         break
+
 
 # Desliga e libera a webcam para que outros aplicativos do computador possam usá-la
 webcam.release()
