@@ -1,0 +1,9 @@
+PySide6
+opencv-python
+face-recognition
+numpy
+bcrypt
+Pillow
+pandas
+openpyxl
+python-dotenv
