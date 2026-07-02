@@ -1,6 +1,8 @@
+from dataclasses import dataclass
+from typing import Optional 
 class Aluno:
 
-    def __init__(self, nome, idade, peso):
-        self.nome = nome
-        self.idade = idade
-        self.peso = peso
+    nome: str
+    idade: int
+    peso: str
+    id_aluno: Optional[int] = None
