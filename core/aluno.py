@@ -3,6 +3,8 @@ from dataclasses import dataclass
 # importa o tipo Optional para tratar chaves primairas nulas antes dec inserçao no banco de dados
 from typing import Optional 
 
+from datetime  import date
+
 @dataclass
 class Aluno:
     """
@@ -12,8 +14,14 @@ class Aluno:
     nome: str
     idade: int
     peso: str
+    altura: str
+    email: str
+    objetivos: str # Emagrecer, hipertrofia, condicionamento, etc.
     plano_status:str
+    telefone: Optional[str] = None
     id_aluno: Optional[int] = None
+    data_cadastro: Optional[date] = None
+
 
     def pode_treinar(self) -> bool:
 
@@ -21,7 +29,7 @@ class Aluno:
 
 
        if self.nome.strip() == "":
-           print(f"[ERRO DE CADASTRO] O nome do aluno não pode estar vazio.")
+           print("O nome do aluno não pode estar vazio.")
            return False
 
        elif len(cpf_numerico) != 11:
